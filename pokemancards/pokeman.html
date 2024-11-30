@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Calibri', sans-serif; /* Calibri font */
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.pokemon-card {
+    width: 300px;
+    height: 450px;
+    background-color: #ffcc00; /* Yellow for Pikachu */
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pokemon-name {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.pokemon-hp {
+    font-size: 1.2rem;
+    color: #d9534f;
+}
+
+.pokemon-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pokemon-info {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.move {
+    margin-bottom: 10px;
+}
+
+.move h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.move p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-footer {
+    font-size: 0.85rem;
+    color: #777;
+    text-align: center;
+}
+
+
+</style>
+<body>
+    <div class="pokemon-card">
+        <div class="card-header">
+            <h2 class="pokemon-name">Pikachu</h2>
+            <span class="pokemon-hp">HP 60</span>
+        </div>
+        <div class="pokemon-image">
+            <img src="images.jpeg" alt="Pikachu">
+        </div>
+        <div class="pokemon-info">
+            <div class="move">
+                <h3>Thunder Shock</h3>
+                <p><strong>Damage:</strong> 40</p>
+            </div>
+            <div class="move">
+                <h3>Quick Attack</h3>
+                <p><strong>Damage:</strong> 20</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <p><em>Electric-type Pokémon.</em></p>
+        </div>
+    </div>
+</body>
+<script>
+const pokemonCard = {
+    name: "Charizard",
+    hp: 120,
+    image: "charizard.png",
+    moves: [
+        { name: "Fire Spin", damage: 60 },
+        { name: "Flamethrower", damage: 90 }
+    ]
+};
+
+document.querySelector('.pokemon-name').textContent = pokemonCard.name;
+document.querySelector('.pokemon-hp').textContent = `HP ${pokemonCard.hp}`;
+document.querySelector('.pokemon-image img').src = pokemonCard.image;
+
+const moveElements = document.querySelectorAll('.move');
+moveElements[0].querySelector('h3').textContent = pokemonCard.moves[0].name;
+moveElements[0].querySelector('p').textContent = `Damage: ${pokemonCard.moves[0].damage}`;
+moveElements[1].querySelector('h3').textContent = pokemonCard.moves[1].name;
+moveElements[1].querySelector('p').textContent = `Damage: ${pokemonCard.moves[1].damage}`;
+
+
+</script>
+</html>
